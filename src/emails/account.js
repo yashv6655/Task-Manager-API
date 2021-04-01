@@ -13,6 +13,16 @@ const sendWelcomeEmail = (email, name) => {
   });
 };
 
+const sendCancelationEmail = (email, name) => {
+  sgMail.send({
+    to: email,
+    from: "bearta.josh@gmail.com",
+    subject: "Cancelation Email",
+    text: `Bye ${name}`,
+  });
+};
+
 module.exports = {
   sendWelcomeEmail,
+  sendCancelationEmail,
 };
